@@ -103,3 +103,32 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Git alias
+alias checkout="git checkout $1"
+alias pull="git pull origin $1"
+alias push="git push origin $1"
+alias fetch="git fetch"
+
+# Directory alias
+alias work="cd $HOME/Workspace"
+
+# AWS
+#alias awslp="aws-vault list --profiles"
+#alias awscr="aws-vault exec $1"
+#alias awsci="aws sts get-caller-identity"
+
+# Java Configuration
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+
+M2_HOME=/opt/apache-maven-3.9.4
+export PATH=$PATH:$M2_HOME/bin
+
+jdk() {
+    version=$1
+    unset JAVA_HOME;
+    export JAVA_HOME=$(/usr/libexec/java_home -v"$version")
+    java -version
+}
+
+
