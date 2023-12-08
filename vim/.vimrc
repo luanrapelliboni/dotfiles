@@ -30,3 +30,5 @@ set incsearch "highlight matching characters search
 set ignorecase "ignore capital letters during search
 
 set termguicolors
+
+colorscheme Revolution
