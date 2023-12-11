@@ -119,16 +119,19 @@ alias work="cd $HOME/Workspace"
 #alias awsci="aws sts get-caller-identity"
 
 # Java Configuration
-export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export JAVA_HOME=/opt/jdk-17.0.9
+export PATH=$PATH:$JAVA_HOME/bin
 
-M2_HOME=/opt/apache-maven-3.9.4
+M2_HOME=/opt/apache-maven-3.9.6
 export PATH=$PATH:$M2_HOME/bin
 
-jdk() {
-    version=$1
-    unset JAVA_HOME;
-    export JAVA_HOME=$(/usr/libexec/java_home -v"$version")
-    java -version
-}
+# jdk() {
+#     version=$1
+#     unset JAVA_HOME;
+#     export JAVA_HOME=$(/usr/libexec/java_home -v"$version")
+#     java -version
+# }
+
+
 
 
