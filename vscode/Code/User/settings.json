@@ -2,12 +2,12 @@
     "workbench.startupEditor": "none",
     "security.workspace.trust.untrustedFiles": "open",
     "editor.fontFamily": "Fira Code Retina",
-    "editor.fontSize": 15,
+    "editor.fontSize": 16,
     "terminal.integrated.fontFamily": "Fira Code Retina",
-    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontSize": 16,
     "window.autoDetectColorScheme": true,
     "workbench.preferredLightColorTheme": "Default Light Modern",
     "workbench.preferredDarkColorTheme": "Popping and Locking",
-    "workbench.colorTheme": "Popping and Locking",
+    "workbench.colorTheme": "Default Light Modern",
     "window.commandCenter": false
 }
