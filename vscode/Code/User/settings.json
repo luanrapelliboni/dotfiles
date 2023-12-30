@@ -7,7 +7,7 @@
     "terminal.integrated.fontSize": 16,
     "window.autoDetectColorScheme": true,
     "workbench.preferredLightColorTheme": "Default Light Modern",
-    "workbench.preferredDarkColorTheme": "Popping and Locking",
-    "workbench.colorTheme": "Default Light Modern",
-    "window.commandCenter": false
+    "workbench.preferredDarkColorTheme": "Default Dark Modern",
+    "window.commandCenter": false,
+    "workbench.colorTheme": "Default Light Modern"
 }
