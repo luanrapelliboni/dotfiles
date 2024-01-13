@@ -132,6 +132,7 @@ export PATH=$PATH:$M2_HOME/bin
 #     java -version
 # }
 
+alias k=kubectl
 
 
 

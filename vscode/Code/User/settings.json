@@ -1,13 +1,15 @@
 {
-    "workbench.startupEditor": "none",
-    "security.workspace.trust.untrustedFiles": "open",
-    "editor.fontFamily": "Fira Code Retina",
-    "editor.fontSize": 16,
-    "terminal.integrated.fontFamily": "Fira Code Retina",
-    "terminal.integrated.fontSize": 16,
-    "window.autoDetectColorScheme": true,
-    "workbench.preferredLightColorTheme": "Default Light Modern",
-    "workbench.preferredDarkColorTheme": "Default Dark Modern",
-    "window.commandCenter": false,
-    "workbench.colorTheme": "Default Light Modern"
+  "workbench.startupEditor": "none",
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.fontFamily": "Fira Code Retina",
+  "editor.fontSize": 16,
+  "terminal.integrated.fontFamily": "Fira Code Retina",
+  "terminal.integrated.fontSize": 16,
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredLightColorTheme": "Default Light Modern",
+  "workbench.preferredDarkColorTheme": "Default Dark Modern",
+  "window.commandCenter": false,
+  "workbench.colorTheme": "Dracula",
+  "editor.tabSize": 2,
+  "workbench.iconTheme": "vscode-icons"
 }
