@@ -111,30 +111,53 @@ alias checkout="git checkout $1"
 alias pull="git pull origin $1"
 alias push="git push origin $1"
 alias fetch="git fetch"
+alias glog="git log --oneline $1" 
 
 # Directory alias
 alias work="cd $HOME/Workspace"
 
-# AWS
-#alias awslp="aws-vault list --profiles"
-#alias awscr="aws-vault exec $1"
-#alias awsci="aws sts get-caller-identity"
+# AWS alias
+awsv() { aws-vault exec "$@" --debug  --duration=1h -- ~/.aws/setProfile.pl;}
+alias awsvlp="aws-vault list --profiles"
+alias awsci="aws sts get-caller-identity"
+alias awslogin="aws clear && aws login $1" 
+
+# change environment alias
+alias uat="awsv uat"
+alias prd="awsv prd"
+
+# kubernetes autocomplete
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
+# kubernetes alias
+alias k="kubectl"
+
+alias k8s_uat="uat \
+	&& aws eks update-kubeconfig --region us-east-1 --name UAT-CLUSTER \
+	&& aws eks get-token --cluster-name UAT-CLUSTER \
+	| awk -F '\"token\":' '{print \$2}' | awk -F '}' '{print \$1}' | sed 's/\"//g;s/^\ //g' \
+	| pbcopy && k config set-context --current --namespace=hml"
+
+alias k8s_prd="prd \
+	&& aws eks update-kubeconfig --region sa-east-1 --name PRD-CLUSTER \
+	&& aws eks get-token --cluster-name PRD-CLUSTER \
+	| awk -F '\"token\":' '{print \$2}' | awk -F '}' '{print \$1}' | sed 's/\"//g;s/^\ //g' \
+	| pbcopy && k config set-context --current --namespace=prd"
 
 # Java Configuration
-export JAVA_HOME=/opt/jdk-17.0.9
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
 export PATH=$PATH:$JAVA_HOME/bin
 
 M2_HOME=/opt/apache-maven-3.9.6
 export PATH=$PATH:$M2_HOME/bin
 
-# jdk() {
-#     version=$1
-#     unset JAVA_HOME;
-#     export JAVA_HOME=$(/usr/libexec/java_home -v"$version")
-#     java -version
-# }
+jdk() {
+      version=$1
+      unset JAVA_HOME;
+      export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+      java -version
+}
 
-alias k=kubectl
 
 
 
