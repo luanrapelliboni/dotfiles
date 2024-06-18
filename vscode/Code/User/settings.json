@@ -6,7 +6,7 @@
   "editor.fontLigatures": true,
   "breadcrumbs.enabled": false,
   "window.autoDetectColorScheme": true,
-  "workbench.preferredLightColorTheme": "Default Light Modern",
+  "workbench.preferredLightColorTheme": "Min Light",
   "workbench.preferredDarkColorTheme": "Min Dark",
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
