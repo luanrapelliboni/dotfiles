@@ -8,8 +8,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="clean"
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="clean"
 
 
 # Set list of themes to pick from when loading at random
@@ -151,18 +151,18 @@ alias k8s_prd="prd \
 	| pbcopy && k config set-context --current --namespace=prd"
 
 # Java Configuration
-export JAVA_HOME=$(/usr/libexec/java_home -v 17)
-export PATH=$PATH:$JAVA_HOME/bin
+#export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+#export PATH=$PATH:$JAVA_HOME/bin
 
-M2_HOME=/opt/apache-maven-3.9.6
-export PATH=$PATH:$M2_HOME/bin
+#M2_HOME=/opt/apache-maven-3.9.6
+#export PATH=$PATH:$M2_HOME/bin
 
-jdk() {
-      version=$1
-      unset JAVA_HOME;
-      export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
-      java -version
-}
+#jdk() {
+#      version=$1
+#      unset JAVA_HOME;
+#      export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+#      java -version
+#}
 
 
 
