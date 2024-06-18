@@ -14,20 +14,33 @@
   "editor.formatOnSave": true,
   "window.zoomLevel": 0.02,
   "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.gpuAcceleration": "off",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "symbols.hidesExplorerArrows": false,
   "workbench.iconTheme": "symbols",
   "update.showReleaseNotes": false,
   "editor.minimap.enabled": false,
   "explorer.compactFolders": false,
   "workbench.statusBar.visible": false,
-  // apc configs
+  "window.titleBarStyle": "native",
+  "workbench.activityBar.location": "hidden",
+  // apc configs (See: Apc Customize UI++)
+  "apc.electron": {
+    "titleBarStyle": "hiddenInset",
+    "trafficLightPosition": {
+      "x": 15,
+      "y": 15
+    },
+  },
   "apc.stylesheet": {
     ".title-label > h2": "display: none",
     ".editor-actions": "display: none",
   },
   "apc.listRow": {
-    "height": 24
+    "height": 26
   },
-  "window.titleBarStyle": "native",
-  "workbench.activityBar.location": "hidden",
+  "apc.header": {
+    "height": 56
+  }
 }
