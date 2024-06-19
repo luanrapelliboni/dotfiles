@@ -24,7 +24,7 @@
   "explorer.compactFolders": false,
   "workbench.statusBar.visible": false,
   "window.titleBarStyle": "native",
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "bottom",
   // apc configs (See: Apc Customize UI++)
   "apc.electron": {
     "titleBarStyle": "hiddenInset",
