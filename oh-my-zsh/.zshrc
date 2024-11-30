@@ -113,30 +113,30 @@ alias glog="git lg $1"
 alias work="cd $HOME/Workspace"
 
 # AWS variables
-export AWS_UAT_PROFILE=uat
+export AWS_STAGING_PROFILE=staging
 export AWS_PRD_PROFILE=prd
-export AWS_UAT_CLUSTER=UAT-CLUSTER
+export AWS_STAGING_CLUSTER=STAGING-CLUSTER
 export AWS_PRD_CLUSTER=PRD-CLUSTER
 
 # AWS alias
-awsv() { aws-vault exec "$@" --debug  --duration=1h -- ~/.aws/setProfile.pl;}
+awsv() { aws-vault exec "$@" --debug  --duration=1h -- ~/.aws/setprofile.pl;}
 alias awsvlp="aws-vault list --profiles"
 alias awsci="aws sts get-caller-identity"
 alias awslogin="aws clear && aws login $1" 
 
 # change environment alias
-alias uat="awsv $AWS_UAT_PROFILE"
+alias staging="awsv $AWS_STAGING_PROFILE"
 alias prd="awsv $AWS_PRD_PROFILE"
 
 # kubernetes autocomplete
-#[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
 # kubernetes alias
 alias k="kubectl"
 
-alias k8s_uat="uat \
-	&& aws eks update-kubeconfig --region us-east-1 --name $AWS_UAT_CLUSTER \
-	&& aws eks get-token --cluster-name $AWS_UAT_CLUSTER \
+alias k8s_staging="staging \
+	&& aws eks update-kubeconfig --region us-east-1 --name $AWS_STAGING_CLUSTER \
+	&& aws eks get-token --cluster-name $AWS_STAGING_CLUSTER \
 	| awk -F '\"token\":' '{print \$2}' | awk -F '}' '{print \$1}' | sed 's/\"//g;s/^\ //g' \
 	| pbcopy && k config set-context --current --namespace=hml"
 
@@ -160,6 +160,8 @@ jdk() {
      java -version
 }
 
+# starship terminal theme
+eval "$(starship init zsh)"
 
 
 
