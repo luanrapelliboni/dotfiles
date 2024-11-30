@@ -9,8 +9,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-#ZSH_THEME="clean"
-
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -97,21 +95,19 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# --- Aliases --- #
+
+# edit configurations
+alias zshconfig="vim ~/.zshrc"
+alias gitconfig="vim ~/.gitconfig"
+alias vimconfig="vim ~/.vimrc"
 
 # Git alias
 alias checkout="git checkout $1"
 alias pull="git pull origin $1"
 alias push="git push origin $1"
 alias fetch="git fetch"
-alias glog="git log --oneline $1" 
+alias glog="git lg $1" 
 
 # Directory alias
 alias work="cd $HOME/Workspace"
@@ -133,7 +129,7 @@ alias uat="awsv $AWS_UAT_PROFILE"
 alias prd="awsv $AWS_PRD_PROFILE"
 
 # kubernetes autocomplete
-[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+#[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
 # kubernetes alias
 alias k="kubectl"
@@ -151,18 +147,18 @@ alias k8s_prd="prd \
 	| pbcopy && k config set-context --current --namespace=prd"
 
 # Java Configuration
-#export JAVA_HOME=$(/usr/libexec/java_home -v 17)
-#export PATH=$PATH:$JAVA_HOME/bin
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export PATH=$PATH:$JAVA_HOME/bin
 
-#M2_HOME=/opt/apache-maven-3.9.6
-#export PATH=$PATH:$M2_HOME/bin
+M2_HOME=/opt/apache-maven-3.9.9
+export PATH=$PATH:$M2_HOME/bin
 
-#jdk() {
-#      version=$1
-#      unset JAVA_HOME;
-#      export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
-#      java -version
-#}
+jdk() {
+     version=$1
+     unset JAVA_HOME;
+     export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+     java -version
+}
 
 
 

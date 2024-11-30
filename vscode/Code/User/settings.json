@@ -4,7 +4,7 @@
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontSize": 15,
   "editor.fontLigatures": true,
-  "breadcrumbs.enabled": false,
+  "breadcrumbs.enabled": true,
   "window.autoDetectColorScheme": true,
   "workbench.preferredLightColorTheme": "Min Light",
   "workbench.preferredDarkColorTheme": "Min Dark",
@@ -16,31 +16,12 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.gpuAcceleration": "off",
   "terminal.integrated.fontSize": 15,
-  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.fontFamily": "JetBrains Mono",
   "symbols.hidesExplorerArrows": false,
   "workbench.iconTheme": "symbols",
   "update.showReleaseNotes": false,
   "editor.minimap.enabled": false,
   "explorer.compactFolders": false,
-  "workbench.statusBar.visible": false,
-  "window.titleBarStyle": "native",
-  "workbench.activityBar.location": "bottom",
-  // apc configs (See: Apc Customize UI++)
-  "apc.electron": {
-    "titleBarStyle": "hiddenInset",
-    "trafficLightPosition": {
-      "x": 15,
-      "y": 15
-    },
-  },
-  "apc.stylesheet": {
-    ".title-label > h2": "display: none",
-    ".editor-actions": "display: none",
-  },
-  "apc.listRow": {
-    "height": 26
-  },
-  "apc.header": {
-    "height": 56
-  }
+  "workbench.statusBar.visible": true,
+  "extensions.ignoreRecommendations": true
 }
