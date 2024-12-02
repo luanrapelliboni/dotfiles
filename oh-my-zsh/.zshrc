@@ -163,5 +163,7 @@ jdk() {
 # starship terminal theme
 eval "$(starship init zsh)"
 
+# Python
+export PATH="$(brew --prefix python)/libexec/bin:$PATH"
 
 

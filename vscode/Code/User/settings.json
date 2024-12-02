@@ -23,5 +23,6 @@
   "editor.minimap.enabled": false,
   "explorer.compactFolders": false,
   "workbench.statusBar.visible": true,
-  "extensions.ignoreRecommendations": true
+  "extensions.ignoreRecommendations": true,
+  "explorer.confirmDragAndDrop": false
 }
