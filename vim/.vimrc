@@ -31,4 +31,4 @@ set ignorecase "ignore capital letters during search
 
 set termguicolors
 
-colorscheme Revolution
+colorscheme darcula
