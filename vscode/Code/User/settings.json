@@ -6,7 +6,6 @@
   "editor.fontLigatures": true,
   "breadcrumbs.enabled": true,
   "window.autoDetectColorScheme": true,
-  "workbench.preferredLightColorTheme": "Min Light",
   "workbench.preferredDarkColorTheme": "Min Dark",
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
@@ -24,5 +23,7 @@
   "explorer.compactFolders": false,
   "workbench.statusBar.visible": true,
   "extensions.ignoreRecommendations": true,
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "redhat.telemetry.enabled": true,
+  "git.openRepositoryInParentFolders": "never"
 }

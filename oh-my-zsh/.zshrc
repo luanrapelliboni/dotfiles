@@ -163,7 +163,18 @@ jdk() {
 # starship terminal theme
 eval "$(starship init zsh)"
 
+function set_win_title(){
+    echo -ne "\033]0; \$$USER in $(basename "$PWD") \007"
+}
+
+precmd_functions+=(set_win_title)
+
+
 # Python
 export PATH="$(brew --prefix python)/libexec/bin:$PATH"
 
+# Rsync
+syncdrive() {
+    rsync -avz --delete ~/Documents/ "/Users/luan.boni/Google Drive/Meu Drive/"
+}
 
