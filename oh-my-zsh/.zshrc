@@ -153,8 +153,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Java Configuration
 eval "$(/Users/luan/.local/bin/mise activate zsh)"
 
-M2_HOME=/opt/apache-maven-3.9.9
-export PATH=$PATH:$M2_HOME/bin
+M2_HOME=/opt/homebrew/Cellar/maven/3.9.11
+#export PATH=$PATH:$M2_HOME/bin (não é necessário, pois ja é exposto pelo homebrew em: /opt/homebrew/bin)
 
 # mise seta automaticamente JAVA_HOME substituindo esta função
 # jdk() {
