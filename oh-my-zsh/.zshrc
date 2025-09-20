@@ -146,35 +146,22 @@ alias k8s_prd="prd \
 	| awk -F '\"token\":' '{print \$2}' | awk -F '}' '{print \$1}' | sed 's/\"//g;s/^\ //g' \
 	| pbcopy && k config set-context --current --namespace=prd"
 
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Java Configuration
-export JAVA_HOME=$(/usr/libexec/java_home -v 17)
-export PATH=$PATH:$JAVA_HOME/bin
+eval "$(/Users/luan/.local/bin/mise activate zsh)"
 
 M2_HOME=/opt/apache-maven-3.9.9
 export PATH=$PATH:$M2_HOME/bin
 
-jdk() {
-     version=$1
-     unset JAVA_HOME;
-     export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
-     java -version
-}
-
-# starship terminal theme
-eval "$(starship init zsh)"
-
-function set_win_title(){
-    echo -ne "\033]0; \$$USER in $(basename "$PWD") \007"
-}
-
-precmd_functions+=(set_win_title)
-
-
-# Python
-export PATH="$(brew --prefix python)/libexec/bin:$PATH"
-
-# Rsync
-syncdrive() {
-    rsync -avz --delete ~/Documents/ "/Users/luan.boni/Google Drive/Meu Drive/"
-}
-
+# mise seta automaticamente JAVA_HOME substituindo esta função
+# jdk() {
+#      version=$1
+#      unset JAVA_HOME;
+#      export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+#      java -version
+# }
+#export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+#export PATH=$PATH:$JAVA_HOME/bin

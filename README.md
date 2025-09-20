@@ -7,23 +7,28 @@ Prerequisites:
 - Docker Desktop
 - Visual Studio Code
 
-Install dependencies:
----------------------
+Install Homebrew dependencies:
+-------------------------------
 
 ```
 $ brew install wget
+
+$ brew install tree
 
 $ brew install awscli
 
 $ brew install --cask aws-vault
 
-$ brew install starship
+```
 
-$ brew install --cask font-jetbrains-mono-nerd-font
-
-$ code --install-extension miguelsolorio.min-theme
-
-$ code --install-extension miguelsolorio.symbols
+Install VSCode dependencies:
+-------------------------------
 
 ```
+$ code --install-extension compassak.intellij-idea-new-ui
+
+$ code --install-extension brennondenny.vsc-jetbrains-icons-enhanced
+
+```
+
 
