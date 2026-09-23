@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="frisk"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -107,61 +107,16 @@ alias checkout="git checkout $1"
 alias pull="git pull origin $1"
 alias push="git push origin $1"
 alias fetch="git fetch"
-alias glog="git lg $1" 
 
 # Directory alias
 alias work="cd $HOME/Workspace"
 
-# AWS variables
-export AWS_STAGING_PROFILE=staging
-export AWS_PRD_PROFILE=prd
-export AWS_STAGING_CLUSTER=STAGING-CLUSTER
-export AWS_PRD_CLUSTER=PRD-CLUSTER
-
-# AWS alias
-awsv() { aws-vault exec "$@" --debug  --duration=1h -- ~/.aws/setprofile.pl;}
-alias awsvlp="aws-vault list --profiles"
-alias awsci="aws sts get-caller-identity"
-alias awslogin="aws clear && aws login $1" 
-
-# change environment alias
-alias staging="awsv $AWS_STAGING_PROFILE"
-alias prd="awsv $AWS_PRD_PROFILE"
-
-# kubernetes autocomplete
-[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
-
-# kubernetes alias
+# Kubernetes
 alias k="kubectl"
-
-alias k8s_staging="staging \
-	&& aws eks update-kubeconfig --region us-east-1 --name $AWS_STAGING_CLUSTER \
-	&& aws eks get-token --cluster-name $AWS_STAGING_CLUSTER \
-	| awk -F '\"token\":' '{print \$2}' | awk -F '}' '{print \$1}' | sed 's/\"//g;s/^\ //g' \
-	| pbcopy && k config set-context --current --namespace=hml"
-
-alias k8s_prd="prd \
-	&& aws eks update-kubeconfig --region sa-east-1 --name $AWS_PRD_CLUSTER \
-	&& aws eks get-token --cluster-name $AWS_PRD_CLUSTER \
-	| awk -F '\"token\":' '{print \$2}' | awk -F '}' '{print \$1}' | sed 's/\"//g;s/^\ //g' \
-	| pbcopy && k config set-context --current --namespace=prd"
-
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Java Configuration
+# Mise
 eval "$(/Users/luan/.local/bin/mise activate zsh)"
-
-M2_HOME=/opt/homebrew/Cellar/maven/3.9.11
-#export PATH=$PATH:$M2_HOME/bin (não é necessário, pois ja é exposto pelo homebrew em: /opt/homebrew/bin)
-
-# mise seta automaticamente JAVA_HOME substituindo esta função
-# jdk() {
-#      version=$1
-#      unset JAVA_HOME;
-#      export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
-#      java -version
-# }
-#export JAVA_HOME=$(/usr/libexec/java_home -v 17)
-#export PATH=$PATH:$JAVA_HOME/bin

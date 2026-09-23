@@ -1,33 +1,18 @@
 # dotfiles-and-config
 
-Prerequisites:
--------------
-- Java (17+)
-- Maven (3.9.9)
-- Docker Desktop
-- Visual Studio Code
-
-Install Homebrew dependencies:
--------------------------------
+Install dependencies:
+---------------------
 
 ```
-$ brew install wget
+$ brew install maven
 
-$ brew install tree
+$ curl https://mise.run | sh
 
-$ brew install awscli
+$ code --install-extension jdinhlife.gruvbox
 
-$ brew install --cask aws-vault
+$ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-```
-
-Install VSCode dependencies:
--------------------------------
-
-```
-$ code --install-extension compassak.intellij-idea-new-ui
-
-$ code --install-extension brennondenny.vsc-jetbrains-icons-enhanced
+$ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 ```
 
